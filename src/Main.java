@@ -5,6 +5,7 @@ public class Main {
 
         task1();
         task2();
+        task3();
 
     } // end of main
 
@@ -15,7 +16,7 @@ public class Main {
         System.out.println();
     } // end of task
 
-    public static void checkLeapYear( int year ) {
+    public static void checkLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + " год — високосный год");
         } else {
@@ -31,7 +32,7 @@ public class Main {
         System.out.println();
     } // end of task
 
-    public static void chooseOS( int os, int deviceYear ) {
+    public static void chooseOS(int os, int deviceYear) {
         int currentYear = LocalDate.now().getYear();
         if (deviceYear < currentYear) {
             if (os == 0) {
@@ -46,6 +47,30 @@ public class Main {
                 System.out.println("Установите обычную версию приложения для Android по ссылке");
             }
         }
-    } // end of checkLeapYear
+    } // end of chooseOS
+
+    public static void task3() {
+        int deliveryDistance = 105;
+
+        System.out.println("Задача 3");
+        System.out.println("Потребуется дней: " + calculateDeliveryTime(deliveryDistance));
+        System.out.println();
+    } // end of task
+
+    public static int calculateDeliveryTime(int distance) {
+        int deliveryTime;
+        if (distance <= 20) {
+            deliveryTime = 1;
+        } else if (distance <= 60) {
+            deliveryTime = 2;
+        } else if (distance <= 100) {
+            deliveryTime = 3;
+        } else {
+            deliveryTime = 100_000_000;
+            System.out.println("Свыше 100 км доставки нет");
+        }
+        return deliveryTime;
+    } // end of calculateDeliveryTime
+
 
 } //end of Main
