@@ -50,8 +50,7 @@ public class Main {
     } // end of chooseOS
 
     public static void task3() {
-        int deliveryDistance = 105;
-
+        int deliveryDistance = 95;
         System.out.println("Задача 3");
         System.out.println("Потребуется дней: " + calculateDeliveryTime(deliveryDistance));
         System.out.println();
